@@ -1,8 +1,9 @@
 import React from "react";
 
 const App = ()=>{
+    console.log("hi");
     return(
-        <h1>Hello World</h1>
+        <h1 className="bg-red-100">Hello World</h1>
     )
 }
 
