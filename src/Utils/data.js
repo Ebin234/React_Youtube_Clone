@@ -35,3 +35,18 @@ export const SideBarItems = {
         {icon: <GiDress size={21} /> , name:"Fasion & beauty"}
     ]
 }
+
+export const TopMenuList = [
+    "All",
+    "Music",
+    "Gaming",
+    "React",
+    "Comedy",
+    "Hollywood",
+    "Trailers",
+    "T-Series",
+    "Bollywood Music",
+    "Mobile Phones",
+    "Cricket",
+    "HTML5"
+]

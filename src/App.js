@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Components/Header";
-import SideBar from "./Components/SideBar";
+import Home from "./Components/Home";
 
 const App = ()=>{
     return(
         <>
-        <div className="flex flex-col h-full">
+        <div className="flex ">
         <Header />
-        <SideBar />
+        <Home />
         </div>
         </>
     )
