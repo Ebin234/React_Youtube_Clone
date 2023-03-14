@@ -1,9 +1,9 @@
 import React from "react";
+import Header from "./Components/Header";
 
 const App = ()=>{
-    console.log("hi");
     return(
-        <h1 className="bg-red-100">Hello World</h1>
+        <Header />
     )
 }
 
