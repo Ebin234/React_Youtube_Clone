@@ -4,7 +4,6 @@ import { SiYoutubegaming, SiYoutubemusic } from "react-icons/si";
 import { VscHistory } from "react-icons/vsc";
 import { BiLike } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
-import {} from "react-icons/hi";
 import { IoMusicalNoteOutline } from "react-icons/io5";
 import { CiTrophy } from "react-icons/ci";
 import { GiDress } from "react-icons/gi";
@@ -49,4 +48,119 @@ export const TopMenuList = [
     "Mobile Phones",
     "Cricket",
     "HTML5"
+]
+
+export const CommentsData = [
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : [
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : [
+                    {
+                        name:"Ebin Yesudas",
+                        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                        replies : []
+                    },
+                ]
+            },
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : []
+            },
+        ]
+    },
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : [
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : []
+            },
+        ]
+    },
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : []
+    },
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : [
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : [
+                    {
+                        name:"Ebin Yesudas",
+                        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                        replies : []
+                    },
+                ]
+            },
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : [
+                    {
+                        name:"Ebin Yesudas",
+                        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                        replies : [
+                            {
+                                name:"Ebin Yesudas",
+                                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                                replies : []
+                            },
+                        ]
+                    },
+                ]
+            },
+        ]
+    },
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : [
+            {
+                name:"Ebin Yesudas",
+                text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                replies : []
+            },
+        ]
+    },
+    {
+        name:"Ebin Yesudas",
+        text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+        replies : [
+            {
+            name:"Ebin Yesudas",
+            text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+            replies : [
+                {
+                    name:"Ebin Yesudas",
+                    text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                    replies : [
+                        {
+                            name:"Ebin Yesudas",
+                            text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                            replies : [
+                                {
+                                    name:"Ebin Yesudas",
+                                    text : "sdnvhbdvij ejfbefjfjf fbshbajif",
+                                    replies : []
+                                },
+                            ]
+                        },
+                    ]
+                },
+            ]
+        },
+    ]
+    },
 ]

@@ -1,7 +1,7 @@
 import React from "react";
-import SideBar from "./SideBar";
-import TopMenu from "./TopMenu";
-import VideoContainer from "./VideoContainer";
+import SideBar from "../Components/SideBar";
+import TopMenu from "../Components/TopMenu";
+import VideoContainer from "../Components/VideoContainer";
 
 const Home = () =>{
     return(

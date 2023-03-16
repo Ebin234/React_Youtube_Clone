@@ -39,7 +39,7 @@ const VideoCard = ()=>{
                 </div>
             </div>
         </div>
-        <div className="flex flex-col max-w-[240px] cursor-pointer">
+        <div className="flex flex-col max-w-[240px] cursor-pointer ">
             <div className="relative w-full">
                 <img 
                 src={Thumbnail} 
@@ -270,7 +270,7 @@ const VideoCard = ()=>{
                 </div>
             </div>
         </div>
-        <div className="flex flex-col max-w-[240px] cursor-pointer">
+        <div className="flex flex-col max-w-[240px] cursor-pointer ">
             <div className="relative w-full">
                 <img 
                 src={Thumbnail} 
