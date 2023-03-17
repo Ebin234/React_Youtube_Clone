@@ -164,3 +164,5 @@ export const CommentsData = [
     ]
     },
 ]
+
+export const YOUTUBE_API_BASEURL = "https://youtube138.p.rapidapi.com";

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import {SideBarItems} from "../Utils/data";
+import {SideBarItems} from "../Utils/Constants";
+import {useSelector} from "react-redux"
 
 const SideBar = ()=>{
     const [selected,setSelected] = useState("Home");
+    const isMenuOpen = useSelector((store)=>store.app.isMenuOpen);
+
+    if(!isMenuOpen) return null;
 
     return(
         <div 

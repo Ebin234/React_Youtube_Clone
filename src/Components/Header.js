@@ -1,14 +1,24 @@
 import React from "react";
 import Logo from "../Assets/logo.png";
-import UserLogo from "../Assets/userLogo.png"
-import {HiMagnifyingGlass, HiOutlineBars3} from "react-icons/hi2"
-import {MdMic} from "react-icons/md"
+import UserLogo from "../Assets/userLogo.png";
+import {HiMagnifyingGlass, HiOutlineBars3} from "react-icons/hi2";
+import {MdMic} from "react-icons/md";
+import {useDispatch} from "react-redux"
+import {toggleMenu} from "../Utils/AppSlice";
 
 const Header = ()=>{
+    const dispatch = useDispatch();
+
+    const toggleMenuHandler = ()=>{
+        dispatch(toggleMenu());
+    }
+
     return(
         <div className="bg-[#0f0f0f] h-14 pl-4 pr-5 flex justify-between items-center fixed w-full z-10">
             <div className="flex justify-between items-center">
-                <div className="text-[#f1f1f1] p-2 w-10 text-2xl text-center hover:bg-[#272727] rounded-full cursor-pointer">
+                <div className="text-[#f1f1f1] p-2 w-10 text-2xl text-center hover:bg-[#272727] rounded-full cursor-pointer"
+                     onClick={()=>toggleMenuHandler()}
+                >
                     <HiOutlineBars3 />
                 </div>
                 <div className="py-5 w-32 pr-3">
