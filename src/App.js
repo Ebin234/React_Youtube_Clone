@@ -9,11 +9,11 @@ import store from "./Utils/Store";
 const AppLayout = createBrowserRouter([
     {
         path: "/",
-        element: <Home />
+        element: [<Header key={1}/>,<Home key={2} />]
     },
     {
-        path:"watch",
-        element: <WatchPage />
+        path:"/watch",
+        element: [<Header key={1}/>,<WatchPage key={2}/>]
     }
 ]);
 
@@ -22,8 +22,8 @@ const App = ()=>{
         <>
         <div className="flex  ">
             <Provider store={store}>
+            <RouterProvider router={AppLayout}>
         <Header />
-        <RouterProvider router={AppLayout}>
         <Home />
         <WatchPage />
         </RouterProvider>

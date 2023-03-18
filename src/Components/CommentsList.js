@@ -2,7 +2,7 @@ import React from 'react'
 import Comments from "./Comments";
 
 function CommentsList({comments}) {
-  console.log(comments)
+  // console.log(comments)
   return (
       comments.map((item,index)=>{
         return(

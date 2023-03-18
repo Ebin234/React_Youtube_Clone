@@ -13,16 +13,6 @@ export const SideBarItems = {
     Top: [
         { icon: <AiFillHome size={21} /> , name:"Home"},
         {icon: <SiYoutubemusic size={21} /> , name:"Shorts"},
-        {icon: <MdOutlineSubscriptions size={21} /> , name:"Subscriptions"}
-    ],
-    Middle: [
-        {icon: <MdVideoLibrary size={21} /> , name:"Library"},
-        {icon: <VscHistory size={21} /> , name:"History"},
-        {icon: <AiOutlinePlaySquare size={21} /> , name:"Your Videos"},
-        {icon: <AiOutlineClockCircle size={21} /> , name:"Watch Later"},
-        {icon: <BiLike size={21} /> , name:"Liked Videos"}
-    ],
-    Explore: [
         {icon: <HiOutlineFire size={21} /> , name:"Trending"},
         {icon: <IoMusicalNoteOutline size={21} /> , name:"Music"},
         {icon: <MdOutlineLocalMovies size={21} /> , name:"Movies"},
@@ -31,8 +21,16 @@ export const SideBarItems = {
         {icon: <BsNewspaper size={21} /> , name:"News"},
         {icon: <CiTrophy size={23} /> , name:"Sports"},
         {icon: <AiOutlineBulb size={21} /> , name:"Learning"},
-        {icon: <GiDress size={21} /> , name:"Fasion & beauty"}
-    ]
+        {icon: <GiDress size={21} /> , name:"Fasion & beauty"}        
+    ],
+    Middle: [
+        {icon: <MdOutlineSubscriptions size={21} /> , name:"Subscriptions"},
+        {icon: <MdVideoLibrary size={21} /> , name:"Library"},
+        {icon: <VscHistory size={21} /> , name:"History"},
+        {icon: <AiOutlinePlaySquare size={21} /> , name:"Your Videos"},
+        {icon: <AiOutlineClockCircle size={21} /> , name:"Watch Later"},
+        {icon: <BiLike size={21} /> , name:"Liked Videos"}
+    ],
 }
 
 export const TopMenuList = [
@@ -165,4 +163,5 @@ export const CommentsData = [
     },
 ]
 
-export const YOUTUBE_API_BASEURL = "https://youtube138.p.rapidapi.com";
+// export const YOUTUBE_API_BASEURL = "https://youtube138.p.rapidapi.com";
+export const YOUTUBE_API_BASEURL = "https://youtube138.p.rapidapi.com/";

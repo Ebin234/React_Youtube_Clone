@@ -3,28 +3,28 @@ import { AiFillLike } from 'react-icons/ai';
 import { BiDislike } from 'react-icons/bi';
 import { HiDotsHorizontal, HiDownload } from 'react-icons/hi';
 import {RiShareForwardLine} from "react-icons/ri";
-import Logo from "../Assets/userLogo.png";
 
-function VideoPlayer() {
+
+function VideoPlayer({data}) {
   return (
     <>
     <div className="flex">
           <iframe width="900" height="500" 
-          src="https://www.youtube.com/embed/592mNGkpYig" 
-          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          src={"https://www.youtube.com/embed/"+data?.videoId}
+          title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
           </iframe>
         </div>
-        <h2 className='text-white font-semibold mt-3 mb-1 text-lg'>Vaa Vaathi</h2>
+        <h2 className='text-white font-semibold mt-3 mb-1 text-lg'>{data?.title}</h2>
         <div className='flex pb-8'>
           <div className="flex items-center">
             <img 
-            src={Logo} 
+            src={data?.author?.avatar[0].url} 
             alt="Youtube Channel"
             className='w-10 h-10 rounded-full ' 
             />
             <div className="px-3">
-              <h3 className="text-white font-medium text-base">Ebin Yesudas</h3>
-              <p className='text-sm text-[#808080]'>22.1k subscribers</p>
+              <h3 className="text-white font-medium text-base">{data?.author?.title}</h3>
+              <p className='text-sm text-[#808080]'>{data?.author?.stats?.subscribersText}</p>
             </div>
             <button className="bg-[#f1f1f1] px-4 py-2 rounded-3xl text-sm font-medium ml-3">
               Subscribe 
@@ -34,7 +34,7 @@ function VideoPlayer() {
                 <div className="flex px-3 items-center border-r-2 border-r-[#212121] cursor-pointer">
                   <AiFillLike className="text-white text-2xl" />
                   <p className="text-white pl-2 pr-3 text-sm font-semibold">
-                    300K
+                    {data?.stats?.likes/1000}K
                   </p>
                 </div>
                 <div className="cursor-pointer pl-4 pr-5">

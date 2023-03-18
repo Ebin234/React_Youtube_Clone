@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Assets/logo.png";
 import UserLogo from "../Assets/userLogo.png";
 import {HiMagnifyingGlass, HiOutlineBars3} from "react-icons/hi2";
 import {MdMic} from "react-icons/md";
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import {toggleMenu} from "../Utils/AppSlice";
+import {searchSuggestionApi } from "../Utils/Api";
+import { changeSearchQuery } from "../Utils/AppSlice";
+import { AiOutlineClose } from "react-icons/ai";
+import { cacheData } from "../Utils/SearchSlice";
+import { Link } from "react-router-dom";
 
 const Header = ()=>{
     const dispatch = useDispatch();
+    const [showSearchQuery,setShowSearchQuery] = useState(false);
+    const [searchQuery,setSearchQuery] = useState("");
+    const [searchSuggestions,setSearchSuggestions] = useState([]);
+    const searchCache = useSelector((store)=>store.search)
 
     const toggleMenuHandler = ()=>{
         dispatch(toggleMenu());
     }
+
+    const searchQueryHandler = (data) =>{
+        console.log("clicked")
+        setSearchQuery(data)
+        setShowSearchQuery(false)
+        dispatch(changeSearchQuery(data))
+    }
+
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            if(searchCache[searchQuery]){
+                setSearchSuggestions(searchCache[searchQuery])
+            }else{
+            searchSuggestionApi(setSearchSuggestions,searchQuery)
+            dispatch(cacheData({[searchQuery]:searchSuggestions}))
+            
+        }
+        },200)
+        return(()=>clearTimeout(timer))
+    },[searchQuery])
+       
+       
 
     return(
         <div className="bg-[#0f0f0f] h-14 pl-4 pr-5 flex justify-between items-center fixed w-full z-10">
@@ -21,16 +52,39 @@ const Header = ()=>{
                 >
                     <HiOutlineBars3 />
                 </div>
-                <div className="py-5 w-32 pr-3">
+                <Link to={"/"} className="py-5 w-32 pr-3">
+                    {/* <Link to={"/"}> */}
                     <img src={Logo} alt="" className="object-contain"/>
-                </div>
+                    </Link>
+                {/* </div> */}
             </div>
             <div className="h-10 flex flex-row items-center">
                 <div className=" bg-[#0f0f0f] flex text-white items-center   ">
-                    <div className=" h-8 w-[493px] flex items-center  border border-[#272727] rounded-l-3xl">
-                    <input type="text" placeholder="Search" className="w-full bg-[#0f0f0f] h-6 ml-6 text-start focus:outline-none pl-4" />
+                    <div>
+                    <div className=" h-8 w-[493px] flex flex-col items-center  border border-[#272727] rounded-l-3xl">
+                    <input type="text" placeholder="Search" className="w-full bg-[#0f0f0f] h-6 ml-6 text-start focus:outline-none pl-4" 
+                    value={searchQuery}
+                    onChange={(e)=>setSearchQuery(e.target.value)}
+                    onFocus={()=>setShowSearchQuery(true)}
+                    // onBlur={()=>setShowSearchQuery(false)}
+                    />
+                    {showSearchQuery && <AiOutlineClose size={21} className="w-8 absolute right-[26rem] top-[18px]" onClick={()=>setShowSearchQuery(false)}/>}
                     </div>
-                    <button className="w-12 h-8 bg-[#272727]  py-0.5 rounded-r-3xl border-l-2 border-[#272727]">
+                    {showSearchQuery && <div className="bg-white absolute top-12 ml-2 w-[485px] rounded-md">
+                        {searchSuggestions.map((data,index)=>{
+                            return(
+                            <div key={index} className="flex items-center pl-4 text-black hover:bg-[#e4e1e1] rounded-md "
+                            onClick={()=>searchQueryHandler(data)}
+                            
+                            >
+                            <HiMagnifyingGlass size={15} className="inline-block text-center font-thin" />
+                            <p className="pl-2">{data}</p>
+                        </div>)})}
+                    </div>}
+                    </div>
+                    <button className="w-12 h-8 bg-[#272727]  py-0.5 rounded-r-3xl border-l-2 border-[#272727]" 
+                    onClick={()=>searchQueryHandler(searchQuery)}
+                    >
                         <HiMagnifyingGlass size={22} className="inline-block text-center font-thin" />
                     </button>
                     <div className="ml-3 w-8 flex items-center pl-1 h-8 border border-[#272727] rounded-full text-xl">

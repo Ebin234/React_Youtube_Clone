@@ -2,11 +2,13 @@ import React from 'react';
 import Thumbnail from "../Assets/thumbnail.jpg";
 import Logo from "../Assets/userLogo.png";
 import { MdVerified } from "react-icons/md";
+import { useSelector } from 'react-redux';
 
 function SearchResults() {
+    const isMenuOpen = useSelector((state)=>state.app.isMenuOpen)
   return (
     <div className="flex flex-col w-full">
-                    <div className="flex flex-row w-[calc(100%-240px)] h-40 py-4 px-2  cursor-pointer hover:bg-[#272727]">
+                    <div className={"flex flex-row h-40 py-4 px-2  cursor-pointer hover:bg-[#272727] " + (isMenuOpen?"w-[calc(100%-240px)]":"w-full")}>
             <div className="relative w-56">
                 <img 
                 src={Thumbnail} 

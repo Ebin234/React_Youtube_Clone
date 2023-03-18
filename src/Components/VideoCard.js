@@ -1,6 +1,7 @@
 import React from "react";
 import { MdVerified } from "react-icons/md";
 import {useSelector} from "react-redux"
+import { Link } from "react-router-dom";
 
 const VideoCard = ({data})=>{
     const isMenuOpen = useSelector((state)=>state.app.isMenuOpen);
@@ -10,7 +11,8 @@ const VideoCard = ({data})=>{
                 // let timer = new Date(card?.video?.lengthSeconds * 1000);
                 // let timerstr = timer.toISOString().substring(11, 19).replace(/^[0:]+/,"")
                 return(
-                    <div key={index} className="flex flex-col max-w-[240px] cursor-pointer">
+                    <Link key={index} to={"/watch?id="+card?.video?.videoId}>
+                    <div className="flex flex-col max-w-[240px] cursor-pointer">
             <div className="relative w-full">
                 <img 
                 src={card?.video?.thumbnails[0]?.url} 
@@ -44,6 +46,7 @@ const VideoCard = ({data})=>{
                 </div>
             </div>
                     </div>
+                    </Link>
                 )
             })}
         
